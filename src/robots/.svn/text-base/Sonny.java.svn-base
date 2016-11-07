@@ -1,0 +1,19 @@
+package robots;
+
+import laberinto.Sala;
+
+public class Sonny extends Robot {
+	
+	/**
+	 * Método constructor parametrizado de la clase Sonny
+	 * 
+	 * @param nombre
+	 * @param id
+	 * @param turno_inicial
+	 * @param sala_Actual
+	 */
+	public Sonny(String nombre, char id, int turno_inicial, Sala sala_Actual) {
+		super(nombre, id, turno_inicial, sala_Actual);
+	}
+
+}

@@ -1,0 +1,161 @@
+package ed;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ListTest {
+    List <Integer> lista;
+	@Before
+	public void setUp() throws Exception {
+		lista= new List<Integer>();
+		lista.addLast(new Integer(1));
+
+		lista.addLast(new Integer(2));
+
+		lista.addLast(new Integer(3));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testSize() {
+		assertEquals(new Integer(3), lista.size());
+	}
+
+	@Test
+	public void testRemoveLast() {
+		lista.removeLast();
+		assertEquals(new Integer(2), lista.size());
+		assertEquals("1 2 ", lista.toString());
+	}
+	
+	@Test
+	public void testRemoveFirst() {
+		lista.removeFirst();
+		assertEquals(new Integer(2), lista.size());
+		assertEquals("2 3 ", lista.toString());
+	}
+	
+	@Test
+	public void testGetFirst () {
+		assertEquals(new Integer(1), lista.getFirst());
+	}
+	
+	@Test
+	public void testGetLast () {
+		assertEquals(new Integer(3), lista.getLast());
+	}
+	
+	@Test 
+	public void testEstaVacia () {
+		assertEquals (false,lista.estaVacia());
+		
+		while(lista.size() != 0) {
+			lista.removeFirst();
+		}
+		assertEquals(true, lista.estaVacia());
+	}
+	
+	@Test 
+	public void testGet () {
+		assertEquals (new Integer(1), lista.get(0));
+		assertEquals (new Integer(2), lista.get(1));
+		assertEquals (new Integer(3), lista.get(2));
+	}
+	
+//	@Test
+//	public void testRemoveDato () {
+//		System.out.println(lista);
+//		System.out.println(lista.removeDato(new Integer (1)));
+//		assertEquals (0, lista.removeDato(new Integer (1)));
+//	}
+	
+	@Test
+	public void testAddOrder () {
+		lista.addOrder(new Integer (5));
+		lista.addOrder(new Integer (4));
+		lista.addOrder(new Integer (6));
+		assertEquals("1 2 3 4 5 6 ", lista.toString());
+	
+	}
+	
+	@Test
+	public void testAddFirst () {
+		lista.addFirst(new Integer (4));
+		assertEquals ("4 1 2 3 ", lista.toString());
+	}
+	
+	@Test
+	public void testContains () {
+		assertEquals(false, lista.contains(5));
+		assertEquals (true, lista.contains(2));
+	}
+
+	@Test
+	public void testAddBefore () {
+		lista.addBefore(new Integer (8), 2);
+		lista.addBefore(new Integer (7), 3);
+		assertEquals("1 8 2 7 3 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testAddAfter () {
+		lista.addAfter(new Integer (8), 2);
+		lista.addBefore(new Integer (7), 1);
+		assertEquals("7 1 2 8 3 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testAddBeforeIndex () {
+		lista.addBeforeIndex(new Integer (7), 1);
+		lista.addBeforeIndex(new Integer (9), 3);
+		assertEquals("7 1 9 2 3 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testAddAfterIndex () {
+		lista.addAfterIndex(new Integer (5), 1);
+		lista.addAfterIndex(new Integer (7), 2);
+		assertEquals("1 5 7 2 3 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testAddIndex () {
+		lista.addIndex(new Integer (5), 1);
+		lista.addIndex(new Integer (7), 2);
+		assertEquals("5 7 1 2 3 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testRemoveIndex () {
+		lista.removeIndex(1);
+		lista.removeIndex(2);
+		assertEquals("2 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testSet () {
+		lista.set(1, new Integer (7));
+		lista.set(3, new Integer (4));
+		assertEquals("7 2 4 ", lista.toString());
+		
+	}
+	
+	@Test
+	public void testToString () {
+		assertEquals("1 2 3 ", lista.toString());
+		
+	}
+
+}

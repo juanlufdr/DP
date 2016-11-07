@@ -1,0 +1,47 @@
+10
+
+dir
+25
+https://subversion.assembla.com/svn/juanlu-carlos-dp/proyecto_DP/src
+https://subversion.assembla.com/svn/juanlu-carlos-dp
+
+
+
+2014-11-20T13:32:38.477128Z
+25
+crodriguddw
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e05e5470-ad6f-4d91-bf04-6eebfd59d58d
+
+cargador
+dir
+
+ed
+dir
+
+laberinto
+dir
+
+pruebas
+dir
+
+
+
+add
+
+robots
+dir
+

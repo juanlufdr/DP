@@ -1,0 +1,19 @@
+package robots;
+
+import laberinto.Sala;
+
+public class Spirit extends Robot {
+
+	/**
+	 * Método constructor parametrizado de la clase Spirit.
+	 * 
+	 * @param nombre
+	 * @param id
+	 * @param turno_inicial
+	 * @param sala_Actual
+	 */
+	public Spirit(String nombre, char id, int turno_inicial, Sala sala_Actual) {
+		super(nombre, id, turno_inicial, sala_Actual);
+	}
+
+}
